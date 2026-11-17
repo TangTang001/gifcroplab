@@ -1,10 +1,12 @@
 # GIF Crop Lab
 
-Crop and resize animated GIFs in your browser. Files are processed on your device.
+Crop, resize, and compress animated GIFs in your browser, or turn a GIF or MP4 into an animated WhatsApp sticker. Files are processed on your device.
 
 - [GIF Cropper](https://gifcroplab.com/) for freeform and square crops.
 - [Circle GIF Cropper](https://gifcroplab.com/crop-gif-to-circle/) for animated avatars with transparent corners.
 - [Resize GIF](https://gifcroplab.com/resize-gif/) to scale an animation by dimensions or percentage.
+- [Compress GIF](https://gifcroplab.com/compress-gif/) to reduce the file size of an animated GIF.
+- [WhatsApp Sticker Maker](https://gifcroplab.com/whatsapp-sticker-maker/) to trim and crop a GIF or MP4 and export a 512 × 512 animated WebP.
 
 ## Development and build
 
