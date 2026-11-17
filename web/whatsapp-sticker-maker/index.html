@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/src/styles.css">
 <title>WhatsApp Sticker Maker for GIFs &amp; Videos | GIF Crop Lab</title>
-<meta name="description" content="Turn a GIF or MP4 into a 512 × 512 animated WebP sticker for WhatsApp. Trim, crop, preview, and download in your browser.">
+<meta name="description" content="Free WhatsApp sticker maker: turn a GIF or MP4 into a 512 × 512 animated WebP in your browser. Trim, crop and download with no app or upload.">
 <link rel="canonical" href="https://gifcroplab.com/whatsapp-sticker-maker/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -23,7 +23,7 @@
       "@type": "WebApplication",
       "name": "WhatsApp Sticker Maker",
       "url": "https://gifcroplab.com/whatsapp-sticker-maker/",
-      "description": "Turn a GIF or MP4 into a 512 × 512 animated WebP sticker for WhatsApp. Trim, crop, preview, and download in your browser.",
+      "description": "Free WhatsApp sticker maker: turn a GIF or MP4 into a 512 × 512 animated WebP in your browser. Trim, crop and download with no app or upload.",
       "applicationCategory": "MultimediaApplication",
       "browserRequirements": "Requires a browser with JavaScript and WebAssembly enabled.",
       "offers": {
@@ -76,7 +76,7 @@
     <p class="intro-description">Turn a GIF or short MP4 into an animated sticker. Trim the clip, position the square crop, and download a 512 × 512 WebP.</p>
   </section>
   <section class="workspace" id="editor" aria-label="WhatsApp sticker editor">
-    <div class="workspace-top"><div class="workspace-title"><span class="step-number">01</span><h2>Sticker editor</h2></div><input id="file" type="file" accept="image/gif,video/mp4,.gif,.mp4" hidden></div>
+    <div class="workspace-top"><div class="workspace-title"><span class="step-number">01</span><h2>Make a WhatsApp sticker in the browser</h2></div><input id="file" type="file" accept="image/gif,video/mp4,.gif,.mp4" hidden></div>
     <p id="file-error" class="file-error" role="alert"></p>
     <div class="editor-grid">
       <div class="canvas-column">
@@ -128,7 +128,7 @@
     </div>
   </section>
   <section class="workspace result-section" aria-label="Animated sticker result">
-    <div class="workspace-top"><div class="workspace-title"><span class="step-number">02</span><h2>Animated sticker</h2></div></div>
+    <div class="workspace-top"><div class="workspace-title"><span class="step-number">02</span><h2>Your animated WhatsApp sticker</h2></div></div>
     <div class="result-empty" id="result-empty"><span class="result-placeholder"><svg aria-hidden="true"><use href="#i-image"/></svg></span><div><h3>No sticker yet</h3><p>Select Make sticker to preview the animation before downloading.</p></div></div>
     <div class="result-filled" id="result-filled" hidden>
       <div class="result-image"><img id="result" alt="Animated WebP sticker"></div>
@@ -212,7 +212,7 @@
     <div class="crop-tips">
       <div>
         <h3>Keep the portion with the clearest motion</h3>
-        <p>WhatsApp's animated sticker format uses WebP with a 512 × 512 canvas, a 500 KB file limit, and a ten second duration limit. File size depends on what changes from frame to frame. A simple illustration moving across a flat background often leaves more room than a camera pan through a crowd. The video sticker maker can reduce quality or drop frames to fit within the size limit. Look for a notice next to the result if frames were dropped, then watch the fastest movement to see how it looks. <a class="related-tool" href="https://github.com/WhatsApp/stickers/blob/main/Android/README.md">WhatsApp’s animated sticker specifications</a></p>
+        <p>WhatsApp's animated sticker format uses WebP with a 512 × 512 canvas, a 500 KB file limit, and a ten second duration limit. File size depends on what changes from frame to frame. A simple illustration moving across a flat background often leaves more room than a camera pan through a crowd. This sticker maker reduces quality or drops frames as needed to fit within the size limit. Look for a notice next to the result if frames were dropped, then watch the fastest movement to see how it looks. <a class="related-tool" href="https://github.com/WhatsApp/stickers/blob/main/Android/README.md">WhatsApp’s animated sticker specifications</a></p>
       </div>
       <div>
         <h3>Try a short version before a long one</h3>
@@ -224,8 +224,15 @@
       </div>
     </div>
   </section>
+  <section class="how-section crop-guide" aria-labelledby="sticker-maker-online">
+    <div class="how-intro"><h2 id="sticker-maker-online">Use this WhatsApp sticker maker online — no app needed</h2></div>
+    <div class="crop-tips">
+      <p>Open the sticker maker in a compatible browser on your computer or phone. Choose an animated GIF or an H.264 MP4, trim the clip, adjust the square crop, and download an animated WebP without installing an app. The browser processes the file on your device, so your GIF or video is never uploaded.</p>
+      <p>To use the downloaded sticker in WhatsApp, follow the sticker pack instructions below.</p>
+    </div>
+  </section>
   <section class="how-section crop-guide" aria-labelledby="using-in-whatsapp">
-    <div class="how-intro"><h2 id="using-in-whatsapp">Use the WebP in WhatsApp</h2></div>
+    <div class="how-intro"><h2 id="using-in-whatsapp">Add the WhatsApp sticker to a pack</h2></div>
     <div class="crop-tips">
       <div>
         <h3>Add it through a sticker pack</h3>
@@ -241,6 +248,7 @@
     <div><h2>Frequently asked questions</h2></div>
     <div class="faq-items">
       <details><summary>Can I convert a GIF to a WhatsApp sticker?</summary><p>Yes. Choose an animated GIF and export it as animated WebP. To keep working in GIF format, use the <a class="related-tool" href="/">GIF Cropper</a> or <a class="related-tool" href="/compress-gif/">GIF Compressor</a>.</p></details>
+      <details><summary>Can I convert a GIF or video to a sticker without an app on a PC?</summary><p>Yes. For GIF to sticker conversion, choose an animated GIF. For video to sticker conversion, choose an H.264 MP4 in a browser that supports H.264 decoding with WebCodecs. Trim and crop the clip, then download the animated WebP directly from the browser. To use it in WhatsApp, see the <a class="related-tool" href="#using-in-whatsapp">sticker pack instructions</a>.</p></details>
       <details><summary>How long can my video be?</summary><p>Choose an H.264 MP4 up to 30 seconds and 20 MB. The first 3 seconds are selected by default, and you can trim any clip up to 10 seconds. MP4 conversion requires a browser with H.264 support in WebCodecs.</p></details>
       <details><summary>Will my sticker have a transparent background?</summary><p>The editor preserves transparency already present in a GIF. A normal MP4 keeps its original background inside the square crop.</p></details>
       <details><summary>Are my files uploaded?</summary><p>Processing happens in your browser. The GIF or video stays on your device.</p></details>
