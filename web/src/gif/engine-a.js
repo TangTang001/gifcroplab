@@ -36,7 +36,8 @@ function quantized(rgba) {
   return { palette, index, transparentIndex, quantized: true };
 }
 
-export function cropA(buffer, rect, meta, circle = false, frameDelays = null) {
+// The composited canvas is reused. Consume each frame before advancing the iterator.
+export function* composedGifFrames(buffer, meta) {
   if (meta.plainText) throw new Error('方案 A 暂不支持 GIF Plain Text 扩展');
   const parsed = parseGIF(buffer);
   const sourceFrames = parsed.frames.filter(f => f.image);
@@ -50,8 +51,6 @@ export function cropA(buffer, rect, meta, circle = false, frameDelays = null) {
       canvas[j] = 0; canvas[j + 1] = 0; canvas[j + 2] = 0; canvas[j + 3] = 0;
     }
   }
-  const encoder = GIFEncoder();
-  let quantizedFrames = 0;
   for (let n = 0; n < sourceFrames.length; n++) {
     const raw = meta.frames[n];
     const previous = raw.disposal === 3 ? canvas.slice() : null;
@@ -64,6 +63,17 @@ export function cropA(buffer, rect, meta, circle = false, frameDelays = null) {
       const j = ((y + raw.y) * W + x + raw.x) * 4;
       canvas[j] = color[0]; canvas[j + 1] = color[1]; canvas[j + 2] = color[2]; canvas[j + 3] = 255;
     }
+    yield { canvas, raw, index: n };
+    if (raw.disposal === 2) clear(raw);
+    else if (raw.disposal === 3) canvas.set(previous);
+  }
+}
+
+export function cropA(buffer, rect, meta, circle = false, frameDelays = null) {
+  const W = meta.width;
+  const encoder = GIFEncoder();
+  let quantizedFrames = 0;
+  for (const { canvas, raw, index: n } of composedGifFrames(buffer, meta)) {
     if (!frameDelays || frameDelays.has(n)) {
       const rgba = new Uint8Array(rect.width * rect.height * 4);
       for (let y = 0; y < rect.height; y++) {
@@ -85,8 +95,6 @@ export function cropA(buffer, rect, meta, circle = false, frameDelays = null) {
         transparent: out.transparentIndex >= 0, transparentIndex: Math.max(0, out.transparentIndex), dispose: 2,
       });
     }
-    if (raw.disposal === 2) clear(raw);
-    else if (raw.disposal === 3) canvas.set(previous);
   }
   encoder.finish();
   return { bytes: encoder.bytes(), details: { quantizedFrames, policy: 'exact palette when <=256 RGBA colors; otherwise rgb565 quantization' } };

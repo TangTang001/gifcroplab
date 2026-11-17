@@ -11,7 +11,9 @@
     "gifenc": "1.0.3",
     "gifsicle-wasm-browser": "1.5.19",
     "gifuct-js": "2.1.2",
-    "vite": "https://registry.npmjs.org/vite/-/vite-7.1.7.tgz"
+    "mp4box": "2.5.0",
+    "vite": "https://registry.npmjs.org/vite/-/vite-7.1.7.tgz",
+    "wasm-webp": "0.1.0"
   },
   "license": "GPL-2.0-only"
 }

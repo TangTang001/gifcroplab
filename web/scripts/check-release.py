@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 root = Path(__file__).resolve().parents[1]
 dist = root / 'dist'
 origin = 'https://gifcroplab.com'
-pages = {'/': 'index.html', '/crop-gif-to-circle/': 'crop-gif-to-circle/index.html', '/resize-gif/': 'resize-gif/index.html', '/compress-gif/': 'compress-gif/index.html', '/privacy/': 'privacy/index.html', '/licenses/': 'licenses/index.html'}
+pages = {'/': 'index.html', '/crop-gif-to-circle/': 'crop-gif-to-circle/index.html', '/resize-gif/': 'resize-gif/index.html', '/compress-gif/': 'compress-gif/index.html', '/whatsapp-sticker-maker/': 'whatsapp-sticker-maker/index.html', '/privacy/': 'privacy/index.html', '/licenses/': 'licenses/index.html'}
 
 
 class Page(HTMLParser):
@@ -56,7 +56,9 @@ for url, name in pages.items():
     assert page.canonical == [origin + url], (name, page.canonical)
     assert page.h1 == 1 and len(page.description) == 1 and page.description[0], name
     assert page.noindex == (url == '/licenses/'), name
-    if url in {'/', '/crop-gif-to-circle/', '/resize-gif/', '/compress-gif/'}:
+    if url in {'/', '/compress-gif/'}:
+        assert '/whatsapp-sticker-maker/' in page.refs, name
+    if url not in {'/privacy/', '/licenses/'}:
         markup, = page.structured_data
         assert markup['@context'] == 'https://schema.org', name
         app, *breadcrumbs = markup.get('@graph', [markup])
@@ -92,7 +94,7 @@ for name, size in [('social.png', (1200, 630)), ('apple-touch-icon.png', (180, 1
     assert data[:8] == b'\x89PNG\r\n\x1a\n' and struct.unpack('>II', data[16:24]) == size
 
 notices = sorted((root / 'public/licenses').glob('*.txt'))
-assert len(notices) == 5, 'third-party notice count'
+assert len(notices) == 9, 'third-party notice count'
 for source in notices:
     assert source.read_bytes() == (dist / 'licenses' / source.name).read_bytes(), source.name
 files = sorted(str(p.relative_to(dist)).replace('\\', '/') for p in dist.rglob('*') if p.is_file())
@@ -116,7 +118,16 @@ examples |= {
     for name in ('robot-before', 'robot-circle', 'cat-before', 'cat-square', 'cat-circle')
     for ext in ('gif', 'png')
 }
+examples |= {
+    'examples/sticker-reaction-cat-before.gif',
+    'examples/sticker-reaction-cat-before.png',
+    'examples/sticker-reaction-cat-after.webp',
+    'examples/sticker-reaction-cat-after.png',
+}
 expected = set(pages.values()) | {'404.html', 'robots.txt', 'sitemap.xml', '_headers', 'favicon.svg', 'favicon.png', 'apple-touch-icon.png', 'social.png'} | {'licenses/' + p.name for p in notices} | source_files | examples
 assert {p for p in files if not p.startswith('assets/')} == expected
-assert all(Path(p).suffix in {'.js', '.css'} for p in files if p.startswith('assets/'))
+webp_wasm, = [p for p in files if p.startswith('assets/webp-wasm-') and p.endswith('.wasm')]
+assert (dist / webp_wasm).read_bytes().startswith(b'\x00asm')
+assert all(Path(p).suffix in {'.js', '.css'} or p == webp_wasm
+           for p in files if p.startswith('assets/'))
 print(json.dumps({'pages': list(pages), 'files': files, 'checks': 'canonical, H1, description, structured data, internal targets, sitemap, 404 noindex and home link, icons, original license bytes, publication file allowlist', 'sha256': {name: hashlib.sha256((dist / name).read_bytes()).hexdigest() for name in files}}, indent=2))

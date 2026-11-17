@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/src/styles.css">
+<title>WhatsApp Sticker Maker for GIFs &amp; Videos | GIF Crop Lab</title>
+<meta name="description" content="Turn a GIF or MP4 into a 512 × 512 animated WebP sticker for WhatsApp. Trim, crop, preview, and download in your browser.">
+<link rel="canonical" href="https://gifcroplab.com/whatsapp-sticker-maker/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#2563eb">
+<meta property="og:type" content="website"><meta property="og:site_name" content="GIF Crop Lab">
+<meta property="og:title" content="WhatsApp Sticker Maker for GIFs &amp; Videos | GIF Crop Lab">
+<meta property="og:description" content="Make an animated WhatsApp sticker from a GIF or MP4 in your browser.">
+<meta property="og:url" content="https://gifcroplab.com/whatsapp-sticker-maker/"><meta property="og:image" content="https://gifcroplab.com/social.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="GIF Crop Lab — crop animated GIFs on your device">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WhatsApp Sticker Maker for GIFs &amp; Videos | GIF Crop Lab"><meta name="twitter:description" content="Make an animated WhatsApp sticker from a GIF or MP4 in your browser."><meta name="twitter:image" content="https://gifcroplab.com/social.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "WhatsApp Sticker Maker",
+      "url": "https://gifcroplab.com/whatsapp-sticker-maker/",
+      "description": "Turn a GIF or MP4 into a 512 × 512 animated WebP sticker for WhatsApp. Trim, crop, preview, and download in your browser.",
+      "applicationCategory": "MultimediaApplication",
+      "browserRequirements": "Requires a browser with JavaScript and WebAssembly enabled.",
+      "offers": {
+        "@type": "Offer",
+        "price": 0
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "GIF Cropper",
+          "item": "https://gifcroplab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "WhatsApp Sticker Maker",
+          "item": "https://gifcroplab.com/whatsapp-sticker-maker/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#editor">Skip to the editor</a>
+<svg class="icon-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+  <symbol id="i-crop" viewBox="0 0 24 24"><path d="M7 3v14h14M3 7h14v14"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 9M4 4v6h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></symbol>
+</defs></svg>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="/" aria-label="GIF Crop Lab home"><span class="brand-icon"><svg><use href="#i-crop"/></svg></span><span>GIF Crop <span class="brand-accent">Lab</span></span></a>
+  <nav class="tool-navigation" aria-label="Main navigation"><a href="/">GIF Cropper</a><a href="/crop-gif-to-circle/">Circle GIF Cropper</a><a href="/resize-gif/">Resize GIF</a><a href="/compress-gif/">Compress GIF</a><a href="/whatsapp-sticker-maker/" aria-current="page">Sticker Maker</a><a class="section-link" href="#how-it-works">How it works</a><a class="section-link" href="#questions">FAQ</a></nav>
+  <span class="local-note"><svg><use href="#i-lock"/></svg> Files stay on your device</span>
+</div></header>
+<main class="resize-page compress-page sticker-page">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">GIF Cropper</a></li><li aria-current="page">WhatsApp Sticker Maker</li></ol></nav>
+  <section class="intro">
+    <h1>WhatsApp Sticker Maker</h1>
+    <p class="intro-description">Turn a GIF or short MP4 into an animated sticker. Trim the clip, position the square crop, and download a 512 × 512 WebP.</p>
+  </section>
+  <section class="workspace" id="editor" aria-label="WhatsApp sticker editor">
+    <div class="workspace-top"><div class="workspace-title"><span class="step-number">01</span><h2>Sticker editor</h2></div><input id="file" type="file" accept="image/gif,video/mp4,.gif,.mp4" hidden></div>
+    <p id="file-error" class="file-error" role="alert"></p>
+    <div class="editor-grid">
+      <div class="canvas-column">
+        <div class="file-bar"><span class="file-name"><svg aria-hidden="true"><use href="#i-image"/></svg><span id="filename">No file selected</span></span><span id="file-summary"></span></div>
+        <div class="stage drop-stage compression-stage" id="stage">
+          <div id="upload-prompt" class="upload-prompt"><button class="drop-upload" id="choose" type="button" aria-label="Choose a GIF or MP4" aria-describedby="local-file-note"><span class="button primary">Choose a GIF or MP4</span><span id="local-file-note">Drop a file here. Up to 20 MB, with MP4s up to 30 seconds.</span></button></div>
+          <div class="sticker-source" id="source-frame" hidden>
+            <img id="original" alt="Selected GIF clip" draggable="false" hidden>
+            <video id="original-video" aria-label="Original video frame at the selected time" muted playsinline preload="auto" hidden></video>
+            <div class="sticker-crop" id="sticker-crop" aria-hidden="true"></div>
+          </div>
+          <p class="sticker-preview-status" id="gif-preview-status" role="status" hidden></p>
+        </div>
+        <div class="sticker-timeline" id="clip-timeline" role="group" aria-labelledby="timeline-label" hidden>
+          <div class="timeline-label"><span id="timeline-label">Clip timeline</span><output id="timeline-selection" aria-live="off"></output></div>
+          <div class="timeline-axis" id="timeline-axis">
+            <div class="timeline-track" aria-hidden="true"><div class="timeline-kept"></div></div>
+            <button type="button" class="timeline-handle timeline-start" id="timeline-start" role="slider" aria-label="Clip start" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"></button>
+            <button type="button" class="timeline-handle timeline-end" id="timeline-end" role="slider" aria-label="Clip end" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"></button>
+          </div>
+          <div class="timeline-label timeline-scale" aria-hidden="true"><span>0:00</span><span id="timeline-duration"></span></div>
+        </div>
+        <div class="file-actions" id="file-actions" hidden>
+          <button class="button replace-file" id="replace-file" type="button"><svg aria-hidden="true"><use href="#i-image"/></svg> Choose another file</button>
+          <button class="button clear-file" id="clear-file" type="button">Clear file</button>
+        </div>
+      </div>
+      <form class="settings" id="sticker-form" aria-label="Sticker settings">
+        <div class="settings-heading"><h3>Sticker settings</h3><p>Pick up to 10 seconds of animation.</p></div>
+        <fieldset class="shape-field compression-controls sticker-controls" id="sticker-controls" disabled>
+          <legend>Trim and crop</legend>
+          <div class="sticker-times">
+            <label for="clip-start">Start (seconds)<input id="clip-start" type="number" min="0" step="0.001" value="0" required></label>
+            <label for="clip-end">End (seconds)<input id="clip-end" type="number" min="0" step="0.001" value="3" required></label>
+          </div>
+          <div id="position-control" hidden>
+            <label for="crop-position" id="position-label">Crop position</label>
+            <input id="crop-position" type="range" min="0" max="100" value="50">
+          </div>
+          <button class="reset" id="reset-settings" type="button"><svg aria-hidden="true"><use href="#i-reset"/></svg> Reset trim and crop</button>
+          <p class="resize-target" id="sticker-target"></p>
+        </fieldset>
+        <div class="settings-bottom">
+          <button class="button primary crop-button" id="sticker-submit" type="submit" disabled><span>Make sticker</span><svg class="end-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="processing-status" id="status" role="status">Choose a local GIF or MP4 to begin.</p>
+          <p class="private-note"><svg aria-hidden="true"><use href="#i-lock"/></svg> Processed on your device.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="workspace result-section" aria-label="Animated sticker result">
+    <div class="workspace-top"><div class="workspace-title"><span class="step-number">02</span><h2>Animated sticker</h2></div></div>
+    <div class="result-empty" id="result-empty"><span class="result-placeholder"><svg aria-hidden="true"><use href="#i-image"/></svg></span><div><h3>No sticker yet</h3><p>Select Make sticker to preview the animation before downloading.</p></div></div>
+    <div class="result-filled" id="result-filled" hidden>
+      <div class="result-image"><img id="result" alt="Animated WebP sticker"></div>
+      <div class="result-details"><h3>Your WebP is ready</h3><p id="result-info"></p><p id="result-note" class="result-helper"></p><a id="download" class="button primary" download><svg aria-hidden="true"><use href="#i-download"/></svg> Download WebP</a><p class="result-helper"><a class="related-tool" href="#using-in-whatsapp">How to use the file in WhatsApp</a></p></div>
+    </div>
+  </section>
+  <section class="crop-example crop-use-cases sticker-examples" aria-labelledby="sticker-example-title">
+    <h2 id="sticker-example-title">Try a WhatsApp reaction sticker</h2>
+    <article class="example-card" aria-labelledby="sticker-reaction-title">
+      <div class="example-heading">
+        <div>
+          <h3 id="sticker-reaction-title">From a wave to a thumbs-up</h3>
+          <p>The kitten waves, then gives a thumbs-up. The sticker keeps only the thumbs-up from 2.2 to 5 seconds and frames it in a square.</p>
+        </div>
+        <button class="button example-button" type="button" data-sticker-example>Try this GIF</button>
+      </div>
+      <div class="example-grid example-grid-half">
+        <figure>
+          <figcaption><strong>Full GIF</strong><span>0–5 s · 640 × 400 px</span></figcaption>
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/examples/sticker-reaction-cat-before.png">
+            <img src="/examples/sticker-reaction-cat-before.gif" width="640" height="400" loading="lazy" alt="Wide transparent GIF of a cream kitten in a blue neckerchief waving and then giving a thumbs-up">
+          </picture>
+        </figure>
+        <svg class="example-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        <figure>
+          <figcaption><strong>Trimmed WebP</strong><span>2.2–5 s · 512 × 512 px</span></figcaption>
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="/examples/sticker-reaction-cat-after.png">
+            <img src="/examples/sticker-reaction-cat-after.webp" width="512" height="512" loading="lazy" alt="Only the kitten’s thumbs-up in a square with a transparent background">
+          </picture>
+        </figure>
+      </div>
+    </article>
+  </section>
+  <section id="how-it-works" class="how-section home-how">
+    <div class="how-intro"><h2>How to turn a video or GIF into a WhatsApp sticker</h2></div>
+    <ol class="steps">
+      <li><span>01</span><div><h3>Choose a GIF or MP4</h3><p>Select an animated GIF or an H.264 MP4 of up to 30 seconds. Files can be up to 20 MB.</p></div></li>
+      <li><span>02</span><div><h3>Trim and frame the clip</h3><p>For your own file, the editor starts with a centered square and up to the first 3 seconds. Drag the timeline handles to select the moment, then move the crop box to keep the subject in view.</p></div></li>
+      <li><span>03</span><div><h3>Preview and download</h3><p>Make the sticker and check the whole loop. Download the animated WebP without a watermark.</p></div></li>
+    </ol>
+  </section>
+  <section class="how-section crop-guide" aria-labelledby="choose-the-clip">
+    <div class="how-intro"><h2 id="choose-the-clip">Choose a clip that reads at sticker size</h2></div>
+    <div class="crop-tips">
+      <div>
+        <h3>Start just before the reaction</h3>
+        <p>Watch the source once and pick the moment that carries the reaction. A head turn followed by a smile, a cat noticing a toy, or a hand giving a thumbs up can usually fit in a couple of seconds. Leave a little space before the movement so the viewer can see what changes. End after the expression or gesture lands. Long pauses before the action make the sticker slower to read and leave less room in the file for the frames people actually want to see.</p>
+      </div>
+      <div>
+        <h3>Set the edges on the timeline</h3>
+        <p>The timeline spans the full duration of the source. The blue area marks the part that will be exported. Drag its left handle to change when the clip starts or the right handle to change when it ends. If the reaction is near the end of a long video, move the end forward first, then bring the start forward. The handles keep the clip within ten seconds. For a later range such as 21 to 24 seconds, enter both values in the time fields if that is quicker.</p>
+        <p>The fields and timeline update together for valid ranges. Use the fields when you know the exact times or when pixel movement on a small screen makes it hard to place a handle precisely. With a handle focused, the arrow keys move it by a tenth of a second. Hold Shift with an arrow key to move by one second. The GIF preview loops the selected time range after each adjustment. For MP4s, adjusting either edge shows the video frame near that time in the source preview.</p>
+      </div>
+      <div>
+        <h3>Check how the last frame meets the first</h3>
+        <p>After making the sticker, watch at least one full loop. A jump from an outstretched hand back to an empty frame can be the point of a reaction sticker. If the jump distracts from the joke, bring the starting and ending poses closer together or cut at a moment of similar movement. Watch the beginning on its own, too. A first frame with the subject in view gives the sticker a recognizable face or shape before the action starts.</p>
+      </div>
+    </div>
+  </section>
+  <section class="how-section crop-guide" aria-labelledby="frame-the-subject">
+    <div class="how-intro"><h2 id="frame-the-subject">Frame a GIF or video for a square sticker</h2></div>
+    <div class="crop-tips">
+      <div>
+        <h3>Keep the subject inside the crop throughout the clip</h3>
+        <p>The editor fits a square inside the source and centers it when the file opens. Drag the box sideways on a wide clip or up and down on a tall one. The crop position slider does the same thing if you prefer a fixed control. Use the shaded areas to see what will be cut off. A face may look centered at the start and drift out by the end, so check both edges of a moving shot and then watch the exported preview.</p>
+      </div>
+      <div>
+        <h3>Give important details room to move</h3>
+        <p>A close crop can make an expression easier to see, but it can also lose a hand, a pet's ears, or the punch line on a caption. For a clip with several people, select the person whose reaction matters and make sure the movement stays legible inside the square. If the subject crosses too far to fit, try a shorter stretch of the action. For text already baked into the source, check that each meaningful line remains inside the crop from the moment it appears until it is gone.</p>
+      </div>
+      <div>
+        <h3>Start with a transparent GIF when the background matters</h3>
+        <p>Existing transparent areas in a GIF can carry through to the WebP. A regular video keeps the scene behind the subject, including walls, shadows, or a green screen. Preview the shape against both light and dark backgrounds when the sticker has a thin outline or dark edges. If your next step requires an edited GIF instead of a sticker file, use the <a class="related-tool" href="/">GIF Cropper</a> to keep the output in GIF format, or use the <a class="related-tool" href="/crop-gif-to-circle/">Circle GIF Cropper</a> for a rounded GIF with transparent corners.</p>
+      </div>
+    </div>
+  </section>
+  <section class="how-section crop-guide" aria-labelledby="sticker-size">
+    <div class="how-intro"><h2 id="sticker-size">Fit the animation within 500 KB</h2></div>
+    <div class="crop-tips">
+      <div>
+        <h3>Keep the portion with the clearest motion</h3>
+        <p>WhatsApp's animated sticker format uses WebP with a 512 × 512 canvas, a 500 KB file limit, and a ten second duration limit. File size depends on what changes from frame to frame. A simple illustration moving across a flat background often leaves more room than a camera pan through a crowd. The video sticker maker can reduce quality or drop frames to fit within the size limit. Look for a notice next to the result if frames were dropped, then watch the fastest movement to see how it looks. <a class="related-tool" href="https://github.com/WhatsApp/stickers/blob/main/Android/README.md">WhatsApp’s animated sticker specifications</a></p>
+      </div>
+      <div>
+        <h3>Try a short version before a long one</h3>
+        <p>If a six second clip spends four seconds setting up the reaction, make a two or three second version around the payoff. You may get a smaller file and keep more detail in the moment that matters. A person turning quickly, a spinning object, or a flash of text can look jumpy when the export drops frames. In those cases, trimming unused time usually gives you a better comparison than repeatedly processing the full length. Compare the output size and motion after each change.</p>
+      </div>
+      <div>
+        <h3>Check the file format if the source will not open</h3>
+        <p>The editor accepts animated GIFs and H.264 video inside MP4 files, up to 20 MB. An MP4 extension by itself does not identify the video codec. If the editor asks for H.264, export the source with that codec in your video editor, then choose the new file. MP4 sources must be no longer than 30 seconds before you load them. If a long recording contains the reaction you want, save a short excerpt first and use the timeline here to make the final cut. Large video dimensions can also hit browser processing limits, so try a 1080p copy if the original is rejected.</p>
+      </div>
+    </div>
+  </section>
+  <section class="how-section crop-guide" aria-labelledby="using-in-whatsapp">
+    <div class="how-intro"><h2 id="using-in-whatsapp">Use the WebP in WhatsApp</h2></div>
+    <div class="crop-tips">
+      <div>
+        <h3>Add it through a sticker pack</h3>
+        <p>Download the animated WebP and locate it in your phone's files. Use a sticker pack app that accepts animated WebP and can add packs to WhatsApp. Follow the app's import instructions and select the exported file. If the app asks you to add more stickers to the same pack, choose other animated stickers. After adding the pack, find it in WhatsApp's sticker picker and confirm that the sticker moves when you send it. Sending the downloaded file as a chat attachment shares it as a file or image. <a class="related-tool" href="https://faq.whatsapp.com/1056840314992666/">WhatsApp’s sticker pack guide</a></p>
+      </div>
+      <div>
+        <h3>Check where the animation stops playing</h3>
+        <p>If the sticker looks still in chat, open the exact WebP you downloaded in a browser and check whether it plays there. If it moves in the browser, check the import step and make sure the pack app keeps animated WebP files animated. A phone's file picker may show a still thumbnail for a moving file, so check the sticker in the pack and in a chat before judging it from the thumbnail. Keep the exported file available so you can retry the same clip without encoding it again.</p>
+      </div>
+    </div>
+  </section>
+  <section id="questions" class="faq-section">
+    <div><h2>Frequently asked questions</h2></div>
+    <div class="faq-items">
+      <details><summary>Can I convert a GIF to a WhatsApp sticker?</summary><p>Yes. Choose an animated GIF and export it as animated WebP. To keep working in GIF format, use the <a class="related-tool" href="/">GIF Cropper</a> or <a class="related-tool" href="/compress-gif/">GIF Compressor</a>.</p></details>
+      <details><summary>How long can my video be?</summary><p>Choose an H.264 MP4 up to 30 seconds and 20 MB. The first 3 seconds are selected by default, and you can trim any clip up to 10 seconds. MP4 conversion requires a browser with H.264 support in WebCodecs.</p></details>
+      <details><summary>Will my sticker have a transparent background?</summary><p>The editor preserves transparency already present in a GIF. A normal MP4 keeps its original background inside the square crop.</p></details>
+      <details><summary>Are my files uploaded?</summary><p>Processing happens in your browser. The GIF or video stays on your device.</p></details>
+      <details><summary>Does a video sticker include sound?</summary><p>The WebP stores image frames. Choose a moment that makes sense from the movement, expression, or text already visible in the source.</p></details>
+      <details><summary>Can I use both the timeline and the time fields?</summary><p>Yes. Drag a handle to make a rough cut, then edit its time in seconds for a precise adjustment. Select Reset trim and crop to return to the default clip and centered square.</p></details>
+    </div>
+  </section>
+</main>
+<footer><a class="brand footer-brand" href="/"><svg><use href="#i-crop"/></svg> GIF Crop Lab</a><span>Make animated stickers in your browser.</span><a href="/privacy/">Privacy</a><a href="/licenses/">Licenses</a></footer>
+<script type="module" src="/src/sticker-page.js"></script>
+</body>
+</html>
